@@ -1,0 +1,263 @@
+/* Configuracion por defecto para todo el html */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Paleta de colores */
+:root{
+    --amarillo: #EAC926;
+    --azul: #03264C;
+    --celeste: #1259c3;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --Verde: #39b54a;
+    --gris-borde-input:#8f8f9d;
+}
+/* Configuracion por default de fuente y color de fondo */
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: var(--gris-claro);
+}
+/* Configuracion default del header */
+header{
+    background-color: var(--amarillo);
+    padding-bottom: 10px;
+}
+/* Configuracion del tamaño de titulo mas grande */
+.titulares{
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+.price-discount{ /* Para que sea un flexbox la caja que contiene al precio y descuento */
+    display: flex;
+    flex-wrap: wrap;
+}
+.precios{
+    font-size: 18px;
+    flex-grow: 0.3; /* Para que el descuento ocupe el 30% de la linea */
+}
+.descuentos{
+    font-size: 16px;
+    color: var(--Verde);
+    flex-grow: 0.7; /* Para que el descuento ocupe el 70% de la linea */
+}
+/* Tamaño de texto para las descripciones */
+.descripciones{
+    font-size: 16px;
+}
+/* Configuracion links */
+a{
+    color:black;
+    text-decoration:none;
+}
+.logo-search-bar{ /*Para que contenedor del encabezado sea un flexbox */
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+ .logo{ /*Para que el logo ocupe el 50% */
+    margin: 1rem;
+    flex-grow: 0.5;
+}
+.search-bar{/*Para que el input bar + icono ocupen el 50% */
+    margin-left: 1rem;
+    font-size: 12px;
+    flex-grow: 0.5;
+    align-self: center;
+}
+.search{
+    width: 100%;
+    position: relative;
+    left: 2.5rem;
+}
+.search-icon{
+    padding: 3px;
+    background-color: white;
+    color: var(--gris-oscuro);
+    border-radius:3px;
+    border: none;
+    position: relative;
+    right: 1rem;
+}
+.input-bar{
+    width: 65%;
+    border: none;
+    padding: 3px;
+    border-radius:3px;
+}
+.buying-option{
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+ul{
+    padding: 0;
+    margin-bottom: 1rem;
+}
+.burger-menu{
+    display: block;
+    background-color: var(--celeste);
+    text-align: center;
+    font-size: 15px;
+    padding-top: 6px;
+    border-radius:3px;
+    height: 25px;
+    width: 30px;
+    color: white;
+    margin: auto;
+}
+.footer-icon{
+    font-size: 2rem;
+    color: var(--celeste);
+    margin-bottom: 10px;
+    transition: color 300ms;
+}
+footer{
+    text-align: center;
+    color: var(--gris-oscuro);
+    word-wrap: break-word;
+    font-size: 12px;
+    background-color: white;
+}
+.footer-section{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.footer-copyright{
+    font-size: 12px;
+}
+h4{
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+main{
+    width: 90vw;
+    margin:auto;
+    color: var(--gris-oscuro);
+
+}
+.product{
+    margin-bottom: 10px;
+    background-color: white;
+    width: 90%; /* Esto es para que entre un solo articulo en mobile */
+    transition: box-shadow 300ms;
+}
+ .article-description{
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 300ms;
+} 
+
+.shipping-logo{
+    color: var(--Verde);
+    background-color: white;
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 1px var(--Verde);
+    padding: 0.4rem;
+    position: relative;
+    top:-2rem;
+    right: -80%;
+    transition: transform 450ms;
+}
+.product-detail{
+    border-top: 1px solid var(--gris-claro);
+    padding: 15px; 
+    text-align: left;   
+}
+.product-image{
+    width: 100%;
+}
+.nav-list{
+    display: none;
+}
+.articles-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+ @media (min-width: 481px){/*tablets https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/ */
+    .nav-list{
+        display: flex;
+    }
+    article{
+        box-shadow: 0px 0px 10px rgb(100,100,100);
+    }
+    .burger-menu{
+        display: none;
+    }
+    .product{
+        width: calc(90%/2); /* Esto es para que entren 2 articulos en tablet */
+    }
+    .main-header{
+        display: flex;
+    } 
+    .logo-search-bar{
+        flex-grow: 0.66; 
+    }
+    .buying-option{
+        flex-grow: 0.33; 
+        align-self: center;
+    }
+    .search-bar{
+    justify-content: center;
+    display: flex;
+    }
+    .nav-list{
+        display: flex;
+    }
+    .nav-bar{
+        flex-grow: 0.40;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1vw;
+        position: relative;
+        top: 1rem;
+    }
+    .login-bar{
+        flex-grow: 0.40;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1vw;
+        position: relative;
+        top:1rem;
+        right:-2vw;
+    }
+}
+@media (min-width: 481px) and (max-width: 769px){/*Solo para tablets para cumplir con ejercitacion M04C04 */
+    .article-description{
+        opacity: 1;
+    }
+}
+@media (min-width: 769px){ /*desktop */
+    .product{
+        width: calc(90%/4);/* Esto es para que entren 4 articulos en version desktop */
+    }
+    .input-bar{/*Para que se expanda y se lea el placeholder de la entrada de busqueda */
+        width: 85%;
+    }
+    .article-description:hover{/*Para aparezca la descripcion al posar el mouse */
+        opacity: 1;
+    }
+    .product:hover{/*Para que haya un sombreado en cada producto */
+        box-shadow: 0.4rem 0.4rem 3px var(--gris-oscuro);
+    }
+    .shipping-logo:hover{/*Para que rote el icono de camion */
+        transform: rotate(-90deg);
+    }
+    .footer-icon:hover{/*Para que cambien de color los iconos del footer al posar el mouse */
+        color: #0022AA;
+    }
+    .footer-container{/*Para que el footer se vea en horizontal */
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-copyright{/*Para que el texto de copyright quede alienado a izquierda */
+        text-align: left;
+    }
+}

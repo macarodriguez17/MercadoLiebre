@@ -1,0 +1,247 @@
+/* Configuracion por defecto para todo el html */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Paleta de colores */
+:root{
+    --amarillo: #EAC926;
+    --azul: #03264C;
+    --celeste: #1259c3;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --Verde: #39b54a;
+    --gris-borde-input:#8f8f9d;
+}
+/* Configuracion por default de fuente y color de fondo */
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: var(--gris-claro);
+}
+/* Configuracion default del header */
+header{
+    background-color: var(--amarillo);
+    padding-bottom: 10px;
+}
+
+/* Configuracion links */
+a{
+    color:black;
+    text-decoration:none;
+}
+/* Clases para elementos del header */
+.logo-search-bar{ /*Para que contenedor del encabezado sea un flexbox */
+    display: flex;
+}
+
+.logo{ /*Para que el logo ocupe el 50% */
+    margin: 1rem;
+    flex-grow: 0.5;
+}
+.search-bar{/*Para que el input bar + icono ocupen el 50% */
+    margin-left: 1rem;
+    font-size: 12px;
+    flex-grow: 0.5;
+    align-self: center;
+}
+.search{/*Para que el boton de busqueda ocupe el 100% y esté centrado */
+    width: 100%;
+    position: relative;
+    left: 2.5rem;
+}
+.search-icon{/*Configuracion icono de busqueda */
+    padding: 3px;
+    background-color: white;
+    color: var(--gris-oscuro);
+    border-radius:3px;
+    border: none;
+    position: relative;
+    right: 1rem;
+}
+.input-bar{/*Configuracion entrada busqueda, está al 60% para que entre el icono superpuesto */
+    width: 65%;
+    border: none;
+    padding: 3px;
+    border-radius:3px;
+}
+.buying-option{/*Configuracion seccion compra en cuotas */
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+ul{/*Configuracion lista desordenada */
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+/*Configuracion menu hamburguesa */
+.burger-menu{
+    display: block;
+    background-color: var(--celeste);
+    text-align: center;
+    font-size: 15px;
+    padding-top: 6px;
+    border-radius:3px;
+    height: 25px;
+    width: 30px;
+    color: white;
+    margin: auto;
+}
+/*Para ocultar el navigation list en version mobile */
+.nav-list{
+    display: none;
+}
+/* Clases para el footer */
+.footer-icon{/*Configuracion iconos footer */
+    font-size: 2rem;
+    color: var(--celeste);
+    margin-bottom: 10px;
+}
+footer{/*Configuracion footer quede fijo y formato*/
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    color: var(--gris-oscuro);
+    word-wrap: break-word;
+    font-size: 12px;
+    background-color: white;
+}
+.footer-section{/*Configuracion cada seccion del footer */
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.footer-copyright{/*Configuracion linea copyright */
+    font-size: 12px;
+}
+
+/*Configuracion main */
+main{
+    width: 90vw;
+    margin:auto;
+    color: var(--gris-oscuro);
+    position: relative;
+
+}
+/*Configuracion titulo mas grande */
+
+.titulo-principal{
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    padding: 0.5rem;
+}
+/*Configuracion caja formulario */
+.login-container{
+    border: var(--gris-claro) solid 1px;
+    background-color: white;
+    width:70%;
+    position: absolute;
+    left:15%;
+    top:4vh;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+/*Configuracion flex container formulario */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+/*Configuracion entradas del formulario */
+.input-formulario{
+    background-color: white;
+    color: var(--gris-oscuro);
+    border: var(--gris-claro) solid 1px;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.5rem;
+}
+/*Configuracion boton formulario */
+.button-formulario{
+    background-color: var(--celeste);
+    color: white;
+    border: hidden;
+    border-radius: 2px;
+    padding: 0.5rem;
+    width: 100%;
+    transition:  background-color 300ms;
+}
+
+ @media (min-width: 481px){/*tablets https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/ */
+    .nav-list{
+        display: flex;
+    }
+    .burger-menu{
+        display: none;
+    }
+    .main-header{
+        display: flex;
+    } 
+    .logo-search-bar{
+        flex-grow: 0.66; 
+    }
+    .buying-option{
+        flex-grow: 0.33; 
+        align-self: center;
+    }
+    .search-bar{
+    justify-content: center;
+    display: flex;
+    }
+    .nav-bar{
+        flex-grow: 0.40;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1vw;
+        position: relative;
+        top: 1rem;
+    }
+    .login-bar{
+        flex-grow: 0.40;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1vw;
+        position: relative;
+        top:1rem;
+        right:-2vw;
+    }
+    .login-container{
+        top:7vh
+    }
+    .titulo-principal{
+        font-size: 24px;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (min-width: 769px){ /*desktop */
+    .input-bar{/*Para que se expanda y se lea el placeholder de la entrada de busqueda */
+        width: 85%;
+    }
+    .login-container{/*Para que la caja del formulario quede centrada verticalmente */
+        top:15vh
+    }
+    .titulo-principal{/*Para que el titulo no quede tan arriba */
+        margin-top:3rem;
+    }
+    .button-formulario:hover{/*Para que cambie de color el boton de Enviar al posar el mouse */
+        background-color: #0022AA;
+    }
+    .footer-icon:hover{/*Para que cambien de color los iconos del footer al posar el mouse */
+        color: #0022AA;
+    }
+    .footer-container{/*Para que el footer se vea en horizontal */
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-copyright{/*Para que el texto de copyright quede alienado a izquierda */
+        text-align: left;
+    }
+}
+
