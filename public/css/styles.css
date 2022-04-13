@@ -53,6 +53,7 @@ a{
     color:black;
     text-decoration:none;
 }
+/* Clases para elementos del header */
 .logo-search-bar{ /*Para que contenedor del encabezado sea un flexbox */
     display: flex;
     /* flex-wrap: wrap; */
@@ -67,12 +68,12 @@ a{
     flex-grow: 0.5;
     align-self: center;
 }
-.search{
+.search{/*Para que el boton de busqueda ocupe el 100% y esté centrado */
     width: 100%;
-    position: relative;
-    left: 2.5rem;
+    /* position: relative; */
+    /* left: 2.5rem; */
 }
-.search-icon{
+.search-icon{/*Configuracion icono de busqueda */
     padding: 3px;
     background-color: white;
     color: var(--gris-oscuro);
@@ -81,77 +82,87 @@ a{
     position: relative;
     right: 1rem;
 }
-.input-bar{
+.input-bar{/*Configuracion entrada busqueda, está al 60% para que entre el icono superpuesto */
     width: 65%;
     border: none;
     padding: 3px;
     border-radius:3px;
 }
-.buying-option{
+.buying-option{/*Configuracion seccion compra en cuotas */
     margin-top: 1rem;
     margin-left: 3rem;
     margin-bottom: 1rem;
 }
-
+/*Configuracion lista desordenada */
 ul{
     padding: 0;
     margin-bottom: 1rem;
 }
+/*Configuracion menu hamburguesa */
 .burger-menu{
     display: block;
     background-color: var(--celeste);
     text-align: center;
     font-size: 15px;
-    padding-top: 6px;
+    padding-top: 4px;
     border-radius:3px;
     height: 25px;
     width: 30px;
     color: white;
     margin: auto;
 }
-.footer-icon{
+/*Para ocultar el navigation list en version mobile */
+.nav-list{
+    display: none;
+}
+/* Clases para el footer */
+.footer-icon{/*Configuracion iconos footer */
     font-size: 2rem;
     color: var(--celeste);
     margin-bottom: 10px;
     transition: color 300ms;
 }
-footer{
+footer{/*Configuracion formato footer*/
     text-align: center;
     color: var(--gris-oscuro);
     word-wrap: break-word;
     font-size: 12px;
     background-color: white;
 }
-.footer-section{
+.footer-section{/*Configuracion cada seccion del footer */
     padding: 1rem;
     margin-bottom: 1rem;
 }
-.footer-copyright{
+.footer-copyright{/*Configuracion linea copyright */
     font-size: 12px;
 }
+/*Configuracion h4 */
 h4{
     font-size: 1rem;
     margin: 0;
     font-weight: 500;
 }
+/*Configuracion main */
 main{
     width: 90vw;
     margin:auto;
     color: var(--gris-oscuro);
 
 }
+/*Configuracion contendor del articulo */
 .product{
     margin-bottom: 10px;
     background-color: white;
     width: 90%; /* Esto es para que entre un solo articulo en mobile */
     transition: box-shadow 300ms;
 }
+/*Configuracion descripcion articulo */
  .article-description{
     margin-top: 1rem;
     opacity: 0;
     transition: opacity 300ms;
 } 
-
+/*Configuracion icono camion */
 .shipping-logo{
     color: var(--Verde);
     background-color: white;
@@ -164,17 +175,17 @@ main{
     right: -80%;
     transition: transform 450ms;
 }
+/*Configuracion parte inferior del articulo (precio, descuento, descripcion e icono camion) */
 .product-detail{
     border-top: 1px solid var(--gris-claro);
     padding: 15px; 
     text-align: left;   
 }
+/*Configuracion imagen del producto */
 .product-image{
     width: 100%;
 }
-.nav-list{
-    display: none;
-}
+/*Contenedor flex para los articulos */
 .articles-section{
     display: flex;
     flex-wrap: wrap;
@@ -182,13 +193,20 @@ main{
     gap: 1rem;
 }
  @media (min-width: 481px){/*tablets https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/ */
+    .search{/*Para que el boton de busqueda ocupe el 100% y esté centrado */
+        position: relative;
+        left: 0.5em;
+    }
+    .input-bar{/*Para que se expanda y se lea el placeholder de la entrada de busqueda */
+        width: 77%;
+    }
     .nav-list{
         display: flex;
     }
-    article{
+    article{/* Box shadow para tables y desktop */
         box-shadow: 0px 0px 10px rgb(100,100,100);
     }
-    .burger-menu{
+    .burger-menu{/* Menu hamburguesa solo visible en la version mobile */
         display: none;
     }
     .product{
@@ -235,11 +253,14 @@ main{
     }
 }
 @media (min-width: 769px){ /*desktop */
-    .product{
-        width: calc(90%/4);/* Esto es para que entren 4 articulos en version desktop */
+    .search{/*Para que el boton de busqueda ocupe el 100% y esté centrado */
+        left: 2.5rem;
     }
     .input-bar{/*Para que se expanda y se lea el placeholder de la entrada de busqueda */
         width: 85%;
+    }
+    .product{
+        width: calc(90%/4);/* Esto es para que entren 4 articulos en version desktop */
     }
     .article-description:hover{/*Para aparezca la descripcion al posar el mouse */
         opacity: 1;
